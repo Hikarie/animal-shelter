@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxrs
+       http://cxf.apache.org/schemas/jaxrs.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="user" class="com.animal.user.User"/>
+    <bean id="statistics" class="com.animal.operate.Statistics"/>
+    <bean id="table" class="com.animal.operate.Table"/>
+    <bean id="health" class="com.animal.operate.Health"/>
+    <bean id="animal" class="com.animal.operate.Animal"/>
+    <bean id="shelter" class="com.animal.operate.Shelter"/>
+    <bean id="staff" class="com.animal.operate.Staff"/>
+    <bean id="vaccine" class="com.animal.operate.Vaccine"/>
+
+    <jaxrs:server address="/rest">
+        <jaxrs:serviceBeans>
+            <ref bean="user"/>
+            <ref bean="statistics"/>
+            <ref bean="table"/>
+            <ref bean="health"/>
+            <ref bean="animal"/>
+            <ref bean="shelter"/>
+            <ref bean="staff"/>
+            <ref bean="vaccine"/>
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+        </jaxrs:providers>
+    </jaxrs:server>
+</beans>

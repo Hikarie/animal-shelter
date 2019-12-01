@@ -1,0 +1,2 @@
+@ .\Batch\InitProcs.sql
+quit
