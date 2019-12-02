@@ -1,4 +1,5 @@
 # 动物收容所信息管理系统
+基于SOA架构的信息管理系统，前端bootstrap/jquery/ajax，后台spring/cxf,数据库oracle
 ## 数据库
 ### 表结构
 * 超级管理员信息表（<u>管理员id</u>, 用户名，密码）
